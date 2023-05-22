@@ -91,12 +91,6 @@ body.innerHTML = `
                 </div>
             </div>
         </div>
-        <div id="footer-container">
-            <h3>poke API</h3>
-            <p>Jordi Valls Pla</p>
-            <p>Derechos reservado</p>
-            <p> © 2023</p>
-        </div>
     </div>
     </section>
     <section id="pokemons">
