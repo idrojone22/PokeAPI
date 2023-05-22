@@ -429,29 +429,69 @@ body {
 }
 
 
+/* iniciar sesion */
 
-/* prova */
 #signup{
-	margin-top: 150px;
+    display: flex;
     justify-content: center;
+    align-items: center;  
 }
 
 #pepe{
-	margin-top: 150px;
-    justify-content: center;
-}
-
-#form-container{
     display: flex;
     justify-content: center;
-    flex-direction: row;
-
+    align-items: center;  
 }
+
+.form-container, .form-container-login{
+    position: absolute;
+    justify-content: center;
+    bottom: 200px;
+}
+
+.form-container h2, .form-container-login h2 {
+    text-align: center;
+}
+
+.form-group-singup, .form-group-login {
+    margin-bottom: 20px;
+}
+
+.form-group-singup label,
+.form-group-login label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group-singup input[type="text"],
+.form-group-singup input[type="password"],
+.form-group-login input[type="text"],
+.form-group-login input[type="password"]
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* prova */
 
 .hero-container{
     display: flex;
     flex-direction: column;
 	justify-content: center;
+    top: 150px;
 }
 
 .hero {

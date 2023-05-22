@@ -116,14 +116,22 @@ body.innerHTML = `
     <section id="signup">
         <div class="hero-container">
             <div class="environment"></div>
-            <h2 class="hero glitch layers" data-text="SIGN-UP"><span>SIGN-UP</span></h2>
+                <h2 class="hero glitch layers" data-text="SIGN-UP"><span>SIGN-UP</span></h2>
+            </div>
         </div>
-        <div id="form-container">
-        <form action="">
-            <input type="text" placeholder="Ingrese su nombre">
-            <input type="password" placeholder="Ingrese tu contraseña">
-            <button>Iniciar Sesion</button>
-        </form>
+        <div class="form-container">
+            <h2>Inicio de sesión</h2>
+            <form>
+                <div class="form-group-singup">
+                    <label for="username">Nombre de usuario:</label>
+                    <input type="text" id="username" name="username" placeholder="Ingrese su nombre de usuario" required>
+                </div>
+                <div class="form-group-singup">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+                </div>
+                <button type="submit">Iniciar sesión</button>
+            </form>
         </div>
     </section>
     <section id="pepe">
@@ -132,11 +140,20 @@ body.innerHTML = `
             <h2 class="hero glitch layers" data-text="LOGIN"><span>LOGIN</span></h2>
         </div>
     <div id="form-container-login">
-        <form action="">
-            <input type="text" placeholder="Ingrese su nombre">
-            <input type="password" placeholder="Ingrese tu contraseña">
-            <button>Iniciar Sesion</button>
-        </form>
+    <div class="form-container">
+    <h2>Registrarse</h2>
+    <form>
+        <div class="form-group-singup">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" name="username" placeholder="Ingrese su nombre de usuario" required>
+        </div>
+        <div class="form-group-singup">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+        </div>
+        <button type="submit">Registrarse</button>
+    </form>
+</div>
     </div>
 </section>
 `;
@@ -255,7 +272,7 @@ function compararPorID(a, b) {
 
 function pokemonsDestacados() {
     for (let i = 0; i < 8; i++) {
-        const randomNumber = Math.floor(Math.random() * 1009) + 1;
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
         let url = `https://pokeapi.co/api/v2/pokemon/${randomNumber}`
         fetch(url)
             .then(response => response.json())
@@ -373,4 +390,3 @@ function mostrarCartas1(name, hp, type, img, weight, id) {
         </div>
     `;
 }
-
