@@ -490,7 +490,7 @@ body {
 .hero-container{
     display: flex;
     flex-direction: column;
-	justify-content: center;
+	  justify-content: center;
     top: 150px;
 }
 
@@ -983,3 +983,5 @@ body {
     center no-repeat;
   background-size: cover;
 }
+
+/* singup */

@@ -133,21 +133,19 @@ body.innerHTML = `
             <div class="environment"></div>
             <h2 class="hero glitch layers" data-text="LOGIN"><span>LOGIN</span></h2>
         </div>
-    <div id="form-container-login">
-    <div class="form-container">
-    <h2>Registrarse</h2>
-    <form>
-        <div class="form-group-singup">
-            <label for="username">Nombre de usuario:</label>
-            <input type="text" id="username" name="username" placeholder="Ingrese su nombre de usuario" required>
-        </div>
-        <div class="form-group-singup">
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
-        </div>
-        <button type="submit">Registrarse</button>
-    </form>
-</div>
+        <div class="form-container-login">
+        <h2>Inicio de sesión</h2>
+        <form id="login" action="https://efficient-continuous-humor.glitch.me/users" method="POST">
+            <div class="form-group-login">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" placeholder="Ingrese su nombre de usuario" required>
+            </div>
+            <div class="form-group-login">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
     </div>
 </section>
 `;
@@ -384,3 +382,4 @@ function mostrarCartas1(name, hp, type, img, weight, id) {
         </div>
     `;
 }
+
