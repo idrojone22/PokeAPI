@@ -14,6 +14,6 @@ if ($addFiles -eq "S") {
 }
 
 git commit -m "$commit"
-git push
+git push -f
 
 Write-Host "Todo OK" 
