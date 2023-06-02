@@ -281,7 +281,9 @@ login1.addEventListener('submit', function(event) {
                     showConfirmButton: false,
                     timer: 1500
                 })        
-                window.location.href = 'http://127.0.0.1:5500/public/index.html#home';       
+                setTimeout( () => {
+                    window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
+                }, 2500)      
             } else {         
                 console.log('Error en el registro');       
             }     
@@ -296,4 +298,58 @@ login1.addEventListener('submit', function(event) {
                 timer: 1500
             })      
         }); 
-});           
+});      
+
+let signupForm = document.querySelector("#signup form");
+
+signupForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let username = signupForm.querySelector("#username_sign").value;
+    let password = signupForm.querySelector("#password_sign").value;
+
+    let data = {
+        username: username,
+        password: password
+    };
+
+    fetch('https://pokeapi-by-idrojone.glitch.me/users/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(function(response) {
+            if (response.ok) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Te has registrado correctamente',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                setTimeout( () => {
+                    window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
+                }, 2500)
+            } else {
+                throw new Error('Error en el registro');
+            }
+        })
+        .catch(function(error) {
+            console.log('Error en la solicitud:', error);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Error al registrarse',
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+});
+
+
+
+
+
+
