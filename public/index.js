@@ -6,16 +6,19 @@ let botonPokemons = document.getElementById("botonPokemons");
 let signUp = document.getElementById("botonSignUp");
 let login = document.getElementById("botonLogin");
 let pokebol = document.getElementById("pokebol");
+let chat = document.getElementById("chat");
 pokemonsDestacados();
 pokemons.style.display = "none";
 signup.style.display = "none";
 pepe.style.display = "none";
+chat.style.display = "none";
 
 botonHome.addEventListener("click", () => {
     console.log("botonHome");
     home.style.display = "flex";
     pokemons.style.display = "none";
     pepe.style.display = "none";
+    chat.style.display = "none";
     signup.style.display = "none";
 });
 
@@ -24,6 +27,7 @@ botonPokemons.addEventListener("click", () => {
     home.style.display = "none"
     pepe.style.display = "none";
     signup.style.display = "none";
+    chat.style.display = "none";
     pokemons.style.display = "flex"
 });
 
@@ -31,6 +35,7 @@ signUp.addEventListener("click", () => {
     home.style.display = "none";
     pokemons.style.display = "none";
     pepe.style.display = "none";
+    chat.style.display = "none";
     signup.style.display = "flex";
 });
 
@@ -38,12 +43,27 @@ login.addEventListener("click", () => {
     home.style.display = "none";
     pokemons.style.display = "none";
     signup.style.display = "none";
+    chat.style.display = "none";
     pepe.style.display = "flex";
 });
 
 pokebol.addEventListener("click", () => {
     console.log("pokebol");
 });
+
+botonchat.addEventListener("click", () => {
+    home.style.display = "none";
+    pokemons.style.display = "none";
+    signup.style.display = "none";
+    pepe.style.display = "none";
+    chat.style.display = "flex";
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Este apartado aun no esta en funcionamiento',
+        footer: '<a href="">Why do I have this issue?</a>'
+    })
+})
 
 fetchPokemon();
 // 1011
@@ -230,3 +250,50 @@ function mostrarCartas1(name, hp, type, img, weight, id) {
         </div>
     `;
 }
+
+let login1 = document.getElementById("login");  
+
+login1.addEventListener('submit', function(event) {     
+    event.preventDefault(); 
+   
+    let username = login1.username.value;     
+    let password = login1.password.value;     
+    console.log(username);         
+        
+    let data = {       
+        username: username,       
+        password: password     
+    };         
+    
+    fetch('https://pokeapi-by-idrojone.glitch.me/users/', {       
+        method: 'POST',       
+        headers: {  
+            'Content-Type': 'application/json'       
+        },       
+        body: JSON.stringify(data)     
+        })     
+        .then(function(response) {       
+            if (response.ok) {         
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Te has registrado correctamente',
+                    showConfirmButton: false,
+                    timer: 1500
+                })        
+                window.location.href = 'http://127.0.0.1:5500/public/index.html#home';       
+            } else {         
+                console.log('Error en el registro');       
+            }     
+        })    
+        .catch(function(error) {       
+            console.log('Error en la solicitud:', error);
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Error al registrarse',
+                showConfirmButton: false,
+                timer: 1500
+            })      
+        }); 
+});           
