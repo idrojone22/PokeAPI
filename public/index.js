@@ -57,12 +57,14 @@ botonchat.addEventListener("click", () => {
     signup.style.display = "none";
     pepe.style.display = "none";
     chat.style.display = "flex";
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Este apartado aun no esta en funcionamiento',
-        footer: '<a href="">Why do I have this issue?</a>'
-    })
+    setTimeout( () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Este apartado aun no esta en funcionamiento',
+            footer: '<a href="">Why do I have this issue?</a>'
+        }, window.location.href = 'https://idrojone22.github.io/pokeAPI/public/#home')
+    }, 2500) 
 })
 
 fetchPokemon();
@@ -347,9 +349,3 @@ signupForm.addEventListener('submit', function(event) {
             });
         });
 });
-
-
-
-
-
-
