@@ -285,7 +285,10 @@ login1.addEventListener('submit', function(event) {
                 })        
                 setTimeout( () => {
                     window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
-                }, 2500)      
+                }, 2500)  
+                userWelcomeContainer.innerHTML = "";
+                showMenuItemsOnLogout();
+                showUserWelcomeMessage(username); 
             } else {         
                 console.log('Error en el registro');       
             }     
@@ -334,6 +337,9 @@ signupForm.addEventListener('submit', function(event) {
                 setTimeout( () => {
                     window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
                 }, 2500)
+                userWelcomeContainer.innerHTML = "";
+                showMenuItemsOnLogout();
+                showUserWelcomeMessage(username);
             } else {
                 throw new Error('Error en el registro');
             }
@@ -348,4 +354,33 @@ signupForm.addEventListener('submit', function(event) {
                 timer: 1500
             });
         });
+
 });
+
+function showUserWelcomeMessage(username) {
+    const userWelcomeContainer = document.getElementById("userWelcomeContainer");
+    userWelcomeContainer.innerHTML = `
+        <p>Bienvenido, ${username}</p>
+        <button id="logoutButton">Salir</button>
+    `;
+
+    const logoutButton = document.getElementById("logoutButton");
+    logoutButton.addEventListener("click", () => {
+        pokebol.style.display = "block";
+        userWelcomeContainer.innerHTML = "";
+    });
+}
+
+function showMenuItemsOnLogout() {
+    const menuItems = document.querySelectorAll(".menu-item");
+    menuItems.forEach((menuItem) => {
+        menuItem.style.display = "block";
+    });
+}
+
+function hideMenuItemsOnLogin() {
+    const menuItems = document.querySelectorAll(".menu-item");
+    menuItems.forEach((menuItem) => {
+        menuItem.style.display = "none";
+    });
+}
