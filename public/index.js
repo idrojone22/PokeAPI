@@ -284,7 +284,7 @@ login1.addEventListener('submit', function(event) {
                     timer: 1500
                 })        
                 setTimeout( () => {
-                    window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
+                    // window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
                 }, 2500)  
                 userWelcomeContainer.innerHTML = "";
                 showMenuItemsOnLogout();
@@ -335,7 +335,7 @@ signupForm.addEventListener('submit', function(event) {
                     timer: 1500
                 });
                 setTimeout( () => {
-                    window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
+                    // window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
                 }, 2500)
                 userWelcomeContainer.innerHTML = "";
                 showMenuItemsOnLogout();
