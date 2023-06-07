@@ -283,9 +283,6 @@ login1.addEventListener('submit', function(event) {
                     showConfirmButton: false,
                     timer: 1500
                 })        
-                setTimeout( () => {
-                    // window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
-                }, 2500)  
                 userWelcomeContainer.innerHTML = "";
                 showMenuItemsOnLogout();
                 showUserWelcomeMessage(username); 
@@ -334,9 +331,6 @@ signupForm.addEventListener('submit', function(event) {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                setTimeout( () => {
-                    // window.location.href = 'https://idrojone22.github.io/pokeAPI/public/';
-                }, 2500)
                 userWelcomeContainer.innerHTML = "";
                 showMenuItemsOnLogout();
                 showUserWelcomeMessage(username);
